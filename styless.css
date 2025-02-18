@@ -1,0 +1,106 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Body Styling */
+  body {
+    background-color: #E8F0F2;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Header */
+  header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  /* Main Content */
+  main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Tracking Card */
+  .tracking-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  /* Input Row Styling */
+  .input-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #fafafa;
+  }
+  
+  .input-row img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .input-row input {
+    flex: 1;
+    border: none;
+    background: none;
+    font-size: 1.2rem;
+    outline: none;
+  }
+  
+  /* Button Styling */
+  button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f1f1f1;
+    color: #777;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 600px) {
+    .tracking-card {
+      padding: 1rem;
+    }
+  
+    header {
+      font-size: 1.2rem;
+    }
+  }
+  

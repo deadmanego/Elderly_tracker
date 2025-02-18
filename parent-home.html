@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Home</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .full-photo {
+            height: 100vh;
+            background-image: url('https://via.placeholder.com/800');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .health-metrics {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #f4f4f9;
+        }
+
+        .box {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            text-align: center;
+        }
+
+        .input-section {
+            padding: 20px;
+        }
+
+        .input-section input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.section {
+    background-color: white;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.section h2 {
+    margin-top: 0;
+}
+.section input {
+    padding: 10px;
+    margin: 5px 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+.btn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+}
+.summary, .recommendation {
+    background-color: #eee;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.summary h3, .recommendation h3 {
+    margin-top: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.summary-boxes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.box {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+}
+
+/* Calendar Styling */
+.calendar-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.calendar-container div {
+    padding: 15px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.green {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.red {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Button */
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}.img:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    transition: transform 0.3s;
+}
+
+    </style>
+</head>
+
+<body>
+    <img src="https://veritascare.co.uk/wp-content/uploads/2022/07/Featured-image1200-%C3%97-628px-3.png" class="img:hover">
+
+    
+    <button onclick="location.href='medicine.html'">Go to Medicine Page</button>
+
+        <h1>Health Tracker</h1>
+        <p>Track your health and improve your lifestyle</p>
+    </header>
+
+    <div class="container">
+        <!-- Calories Section -->
+        <div class="section">
+            <h2>Calories</h2>
+            <p>Enter your daily calorie intake:</p>
+            <input type="number" placeholder="Enter calories" id="caloriesInput">
+            <button class="btn" onclick="logCalories()">Log Calories</button>
+        </div>
+
+        <!-- Steps Section -->
+        <div class="section">
+            <h2>Steps</h2>
+            <p>Enter your steps for the day:</p>
+            <input type="number" placeholder="Enter steps" id="stepsInput">
+            <button class="btn" onclick="logSteps()">Log Steps</button>
+        </div>
+
+        <!-- Water Intake Section -->
+        <div class="section">
+            <h2>Water Intake</h2>
+            <p>Enter your water intake (in liters):</p>
+            <input type="number" placeholder="Enter water intake" id="waterInput">
+            <button class="btn" onclick="logWater()">Log Water</button>
+        </div>
+
+        <!-- Sleep Section -->
+        <div class="section">
+            <h2>Sleep</h2>
+            <p>Enter hours of sleep:</p>
+            <input type="number" placeholder="Enter hours of sleep" id="sleepInput">
+            <button class="btn" onclick="logSleep()">Log Sleep</button>
+        </div>
+
+        <!-- Exercise Section -->
+        <div class="section">
+            <h2>Exercise</h2>
+            <p>Enter your exercise duration (in minutes):</p>
+            <input type="number" placeholder="Enter minutes" id="exerciseInput">
+            <button class="btn" onclick="logExercise()">Log Exercise</button>
+        </div>
+
+        <!-- Summary Section -->
+        <div class="summary" id="summarySection">
+            <h3>Daily Summary</h3>
+            <p>Calories: <span id="caloriesSummary">0</span></p>
+            <p>Steps: <span id="stepsSummary">0</span></p>
+            <p>Water Intake: <span id="waterSummary">0</span> liters</p>
+            <p>Sleep: <span id="sleepSummary">0</span> hours</p>
+            <p>Exercise: <span id="exerciseSummary">0</span> minutes</p>
+        </div>
+
+        <!-- Recommendations Section -->
+        <div class="recommendation" id="recommendationSection">
+            <h3>Recommendations</h3>
+            <p id="recommendationText">Log your data to see personalized health tips.</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <h2>Daily Summary</h2>
+        <div class="summary-boxes">
+            <div class="box">Steps: <span id="stepsSummary">0</span></div>
+            <div class="box">Sleep: <span id="sleepSummary">0</span> hours</div>
+            <div class="box">Calories: <span id="caloriesSummary">0</span></div>
+        </div>
+
+        <h2>Update Calendar</h2>
+        <div class="calendar-container" id="calendar"></div>
+
+        <h3>Medicine Intake</h3>
+        <button class="btn" onclick="logMedicine()">Mark Medicine Taken</button>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 Health Tracker | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
+    <script>
+        // Load previously saved data from localStorage
+        window.onload = function() {
+            updateSummary();
+        };
+
+        // Function to log calories and save to localStorage
+        function logCalories() {
+            let calories = document.getElementById('caloriesInput').value;
+            if (calories) {
+                localStorage.setItem('calories', calories);
+                alert(`You have logged ${calories} calories.`);
+                updateSummary();
+                updateRecommendations();
+            }
+        }
+
+        // Function to log steps and save to localStorage
+        function logSteps() {
+            let steps = document.getElementById('stepsInput').value;
+            if (steps) {
+                localStorage.setItem('steps', steps);
+                alert(`You've logged ${steps} steps.`);
+                updateSummary();
+                updateRecommendations();
+            }
+        }
+
+        // Function to log water intake and save to localStorage
+        function logWater() {
+            let water = document.getElementById('waterInput').value;
+            if (water) {
+                localStorage.setItem('water', water);
+                alert(`You've logged ${water} liters of water.`);
+                updateSummary();
+                updateRecommendations();
+            }
+        }
+
+        // Function to log sleep and save to localStorage
+        function logSleep() {
+            let sleep = document.getElementById('sleepInput').value;
+            if (sleep) {
+                localStorage.setItem('sleep', sleep);
+                alert(`You've logged ${sleep} hours of sleep.`);
+                updateSummary();
+                updateRecommendations();
+            }
+        }
+
+        // Function to log exercise and save to localStorage
+        function logExercise() {
+            let exercise = document.getElementById('exerciseInput').value;
+            if (exercise) {
+                localStorage.setItem('exercise', exercise);
+                alert(`You have logged ${exercise} minutes of exercise.`);
+                updateSummary()
+                updateRecommendations();
+            }
+        }
+
+        // Function to update the summary section with the latest logged data
+        function updateSummary() {
+            document.getElementById('caloriesSummary').innerText = localStorage.getItem('calories') || '0';
+            document.getElementById('stepsSummary').innerText = localStorage.getItem('steps') || '0';
+            document.getElementById('waterSummary').innerText = localStorage.getItem('water') || '0';
+            document.getElementById('sleepSummary').innerText = localStorage.getItem('sleep') || '0';
+            document.getElementById('exerciseSummary').innerText = localStorage.getItem('exercise') || '0';
+        }
+
+        // Function to provide health recommendations based on input
+        function updateRecommendations() {
+            let calories = parseInt(localStorage.getItem('calories')) || 0;
+            let steps = parseInt(localStorage.getItem('steps')) || 0;
+            let water = parseFloat(localStorage.getItem('water')) || 0;
+            let sleep = parseFloat(localStorage.getItem('sleep')) || 0;
+            let exercise = parseFloat(localStorage.getItem('exercise')) || 0;
+
+            let recommendationText = "Here are some tips to improve your lifestyle:\n";
+
+            // Basic recommendations logic
+            if (calories > 2500) {
+                recommendationText += "Reduce your calorie intake to stay within a healthy range.\n";
+            } else if (calories < 1200) {
+                recommendationText += "Increase your calorie intake to ensure proper nutrition.\n";
+            }
+
+            if (steps < 8000) {
+                recommendationText += "Aim for at least 8000 steps a day for better cardiovascular health.\n";
+            }
+
+            if (water < 2) {
+                recommendationText += "Increase your water intake to at least 2 liters per day.\n";
+            }
+
+            if (sleep < 7) {
+                recommendationText += "Try to get at least 7-8 hours of sleep per night.\n";
+            }
+
+            if (exercise < 30) {
+                recommendationText += "Try to engage in at least 30 minutes of exercise daily.\n";
+            }
+
+            document.getElementById('recommendationText').innerText = recommendationText;
+        }
+        
+// Generate the current month's calendar dynamically
+window.onload = function () {
+    generateCalendar();
+    updateSummary();
+};
+
+// Function to generate the calendar
+function generateCalendar() {
+    const calendar = document.getElementById('calendar');
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dateKey = `${year}-${month + 1}-${day}`;
+        const status = localStorage.getItem(dateKey) || 'red';
+        const dayElement = document.createElement('div');
+        dayElement.className = status;
+        dayElement.textContent = day;
+        calendar.appendChild(dayElement);
+    }
+}
+
+// Function to log medicine and update calendar
+function logMedicine() {
+    const today = new Date();
+    const dateKey = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+
+    localStorage.setItem(dateKey, 'green');
+    alert('Medicine marked as taken!');
+    location.reload(); // Reload to update the calendar
+}
+
+// Function to update summary (for demo purposes)
+function updateSummary() {
+    document.getElementById('stepsSummary').innerText = localStorage.getItem('steps') || '0';
+    document.getElementById('sleepSummary').innerText = localStorage.getItem('sleep') || '0';
+    document.getElementById('caloriesSummary').innerText = localStorage.getItem('calories') || '0';
+}
+</script>
+    </script>
+</body>
+</html>

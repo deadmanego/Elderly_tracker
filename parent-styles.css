@@ -1,0 +1,171 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+/* Container */
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Full-size Photo */
+.full-size-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: -60px; /* Create overlap effect */
+}
+
+/* Info Boxes */
+.info-boxes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Data Entry Section */
+.data-entry {
+    margin-top: 30px;
+}
+
+.data-entry input {
+    padding: 10px;
+    margin: 5px;
+    width: calc(33.33% - 10px);
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+/* Medicine Section */
+.medicine-section {
+    margin-top: 30px;
+}
+
+.medicine-section h2 {
+    margin-bottom: 10px;
+}
+
+/* Calendar Section */
+.calendar {
+    margin-top: 20px;
+}
+
+#monthLabel {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #f4f4f4;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.day.taken {
+    background-color: green;
+    color: white;
+}
+
+.day.not-taken {
+    background-color: red;
+    color: white;
+}
+
+/* Success Overlay */
+.success-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(76, 175, 80, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.success-overlay.show {
+    display: flex;
+    opacity: 1;
+}
+
+.success-icon {
+    font-size: 100px;
+    color: white;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    padding: 10px;
+    background-color: #ddd;
+    color: #333;
+}

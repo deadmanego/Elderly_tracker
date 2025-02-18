@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .medicine {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<style>
+body
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+h2 {
+    color: #2c3e50;
+}
+
+.medicine {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+.success {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+</style>
+</head>
+<body>
+<h2>Medicine Tracker</h2>
+
+<div class="medicine">
+<p>Medicine Name: <strong>Aspirin</strong></p>
+<p>Next Appointment: <strong>Oct 25, 2024</strong></p>
+</div>
+
+<button onclick="updateMedicine()">Update Medicine Intake</button>
+
+<div id="success-message" class="success" style="display: none;">
+✔
+</div>
+
+<script>
+function updateMedicine() {
+    // Display success message
+    const successMessage = document.getElementById('success-message');
+    successMessage.style.display = 'flex'; // Show the message
+    successMessage.style.opacity = '1'; // Fade in
+
+    // Change background color
+    document.body.style.backgroundColor = 'green';
+
+    // Alert for medicine intake update
+    alert('Medicine intake updated. Notification sent to child.');
+
+    // Hide the success message and reset background color after 10 seconds
+    setTimeout(() => {
+        successMessage.style.opacity = '0'; // Fade out
+        document.body.style.backgroundColor = '#f0f0f0'; // Reset background color
+    }, 10000);
+}
+</script>
+</body>
+<style>

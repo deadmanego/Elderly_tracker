@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Child Home</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.summary-boxes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.box {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+}
+
+/* Calendar Styling */
+.calendar-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.calendar-container div {
+    padding: 15px;
+    text-align: center;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.green {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.red {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Button */
+.btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+</style>
+</head>
+
+<body>
+    <h1>Welcome, Child</h1>
+
+
+    <div class="container">
+        <h2>Daily Summary</h2>
+        <div class="summary-boxes">
+            <div class="box">Steps: <span id="stepsSummary">0</span></div>
+            <div class="box">Sleep: <span id="sleepSummary">0</span> hours</div>
+            <div class="box">Calories: <span id="caloriesSummary">0</span></div>
+        </div>
+
+        <h2>Update Calendar</h2>
+        <div class="calendar-container" id="calendar"></div>
+    </div>
+</body>
+<script>
+// Generate the current month's calendar dynamically
+window.onload = function () {
+    generateCalendar();
+    updateSummary();
+};
+
+// Function to generate the calendar
+function generateCalendar() {
+    const calendar = document.getElementById('calendar');
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dateKey = `${year}-${month + 1}-${day}`;
+        const status = localStorage.getItem(dateKey) || 'red';
+        const dayElement = document.createElement('div');
+        dayElement.className = status;
+        dayElement.textContent = day;
+        calendar.appendChild(dayElement);
+    }
+}
+
+// Function to log medicine and update calendar
+function logMedicine() {
+    const today = new Date();
+    const dateKey = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+
+    localStorage.setItem(dateKey, 'green');
+    alert('Medicine marked as taken!');
+    location.reload(); // Reload to update the calendar
+}
+
+// Function to update summary (for demo purposes)
+function updateSummary() {
+    document.getElementById('stepsSummary').innerText = localStorage.getItem('steps') || '0';
+    document.getElementById('sleepSummary').innerText = localStorage.getItem('sleep') || '0';
+    document.getElementById('caloriesSummary').innerText = localStorage.getItem('calories') || '0';
+}
+</script>
+
+</html>
